@@ -2011,3 +2011,1099 @@ go("home");
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AS Global Management — Certified Pest Control & Disinfection</title>
+<meta name="description" content="Book certified pest control services in minutes. Cockroach, termite, bed bug, and rodent control with eco-safe chemicals and a 30-day warranty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0f764e;
+    --primary-dark:#0a5236;
+    --primary-light:#eaf6ef;
+    --accent:#f59e0b;
+    --accent-glow:rgba(245,158,11,.18);
+    --whatsapp:#25d366;
+    --whatsapp-dark:#1da851;
+    --ink:#0b1913;
+    --ink-light:#34483e;
+    --muted:#64786e;
+    --line:#e2ece6;
+    --bg:#f6faf7;
+    --surface:#ffffff;
+    --danger:#dc2626;
+    --radius:16px;
+    --shadow-sm:0 2px 4px rgba(11,25,19,.04),0 1px 2px rgba(11,25,19,.06);
+    --shadow-md:0 10px 25px -4px rgba(15,118,78,.1),0 4px 10px -2px rgba(11,25,19,.04);
+    --shadow-lg:0 22px 45px -8px rgba(11,25,19,.15);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+    background:var(--bg);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.6;
+  }
+  h1,h2,h3,.brand-title,.price-tag{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+  button{font-family:inherit;cursor:pointer}
+  a{color:var(--primary);text-decoration:none}
+
+  /* ============ Emergency Top Banner ============ */
+  .emergency-bar{
+    background:linear-gradient(90deg,#0a3a27,#0e5d3d,#0a3a27);
+    color:#e1fcee;padding:8px 16px;font-size:.82rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;
+  }
+  .pulse-dot{
+    width:9px;height:9px;border-radius:50%;background:#4ade80;
+    box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:pulse 1.8s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(74,222,128,.8)}
+    70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}
+    100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}
+  }
+
+  /* ============ Header ============ */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(255,255,255,.94);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);transition:box-shadow .2s;
+  }
+  .header-inner{
+    max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px);
+    height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .logo{display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none}
+  .logo-mark{
+    width:44px;height:44px;border-radius:13px;flex:none;
+    background:linear-gradient(140deg,var(--primary),var(--primary-dark));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(15,118,78,.25);
+  }
+  .logo-mark svg{width:25px;height:25px}
+  .brand-title{font-size:1.05rem;font-weight:800;color:var(--ink);line-height:1.15}
+  .brand-title small{display:block;font-family:'Plus Jakarta Sans';font-size:.66rem;font-weight:700;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+  nav{display:flex;align-items:center;gap:6px}
+  .nav-link{
+    padding:9px 15px;border-radius:11px;font-size:.88rem;font-weight:700;
+    color:var(--ink-light);background:transparent;border:none;transition:.2s;
+  }
+  .nav-link:hover{background:var(--primary-light);color:var(--primary-dark)}
+  .nav-link.active{color:var(--primary-dark);background:var(--primary-light)}
+  .nav-link.is-cta{
+    background:var(--primary);color:#fff;padding:9px 18px;border-radius:999px;
+    box-shadow:0 4px 14px rgba(15,118,78,.25);
+  }
+  .nav-link.is-cta:hover{background:var(--primary-dark);transform:translateY(-1px)}
+  .cart-badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:20px;height:20px;padding:0 6px;margin-left:7px;border-radius:999px;
+    background:#fff;color:var(--primary);font-size:.72rem;font-weight:800;
+  }
+
+  /* ============ Views ============ */
+  .view{display:none}
+  .view.show{display:block;animation:fadeUp .35s cubic-bezier(.16,1,.3,1)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .page{padding-top:44px;padding-bottom:80px}
+
+  .sec-head{margin-bottom:34px;max-width:680px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--primary-dark);background:var(--primary-light);
+    padding:6px 14px;border-radius:999px;margin-bottom:14px;
+    border:1px solid rgba(15,118,78,.15);
+  }
+  .sec-head h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:8px;line-height:1.2}
+  .sec-head p{color:var(--muted);font-size:1rem}
+
+  /* ============ Hero ============ */
+  .hero{
+    max-width:1200px;margin:0 auto;padding:48px clamp(16px,4vw,32px) 0;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,60px);align-items:center;
+  }
+  @media(max-width:920px){.hero{grid-template-columns:1fr;padding-top:32px}}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:9px;background:#fef3c7;border:1px solid #fde68a;
+    padding:6px 14px;border-radius:999px;color:#92400e;font-size:.8rem;font-weight:700;margin-bottom:16px;
+  }
+  .hero-text h1{font-size:clamp(2.1rem,4.8vw,3.3rem);line-height:1.12;margin-bottom:18px}
+  .hero-text h1 span{
+    background:linear-gradient(130deg,var(--primary),#065f46);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .hero-text p{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:28px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+    background:var(--primary);color:#fff;border:none;
+    padding:14px 26px;border-radius:12px;font-size:.95rem;font-weight:700;
+    transition:.25s cubic-bezier(.16,1,.3,1);box-shadow:0 8px 20px rgba(15,118,78,.22);
+  }
+  .btn:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(15,118,78,.32)}
+  .btn:active{transform:none}
+  .btn.ghost{background:#fff;color:var(--primary-dark);border:1.5px solid var(--line);box-shadow:var(--shadow-sm)}
+  .btn.ghost:hover{border-color:var(--primary);background:var(--primary-light)}
+  .btn.whatsapp-btn{background:var(--whatsapp);color:#fff;box-shadow:0 8px 20px rgba(37,211,102,.28)}
+  .btn.whatsapp-btn:hover{background:var(--whatsapp-dark)}
+  .btn.block{width:100%;justify-content:center}
+  .btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+  .hero-stats{display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap;border-top:1px solid var(--line);padding-top:22px}
+  .hero-stats .stat b{display:block;font-family:'Space Grotesk';font-size:1.4rem;font-weight:800;color:var(--ink)}
+  .hero-stats .stat span{font-size:.8rem;color:var(--muted);font-weight:600}
+
+  /* Hero Side Visual */
+  .hero-card-wrap{position:relative}
+  .hero-img{
+    position:relative;border-radius:20px;overflow:hidden;
+    box-shadow:var(--shadow-lg);border:1px solid var(--line);margin-bottom:18px;aspect-ratio:16/10;
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .hero-img:hover img{transform:scale(1.03)}
+  .img-badge{
+    position:absolute;bottom:14px;left:14px;right:14px;background:rgba(11,25,19,.75);
+    backdrop-filter:blur(8px);color:#fff;padding:10px 14px;border-radius:12px;
+    font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:8px;
+  }
+  .hero-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:20px;
+    box-shadow:var(--shadow-md);padding:24px;position:relative;overflow:hidden;
+  }
+  .hero-card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:5px;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+  }
+  .benefit-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .b-item{display:flex;gap:10px;align-items:flex-start}
+  .b-item .icon{font-size:1.2rem}
+  .b-item b{font-size:.88rem;display:block}
+  .b-item span{font-size:.76rem;color:var(--muted)}
+
+  /* ============ Cards / Services ============ */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;display:flex;flex-direction:column;gap:12px;
+    transition:.25s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);position:relative;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:#b9d9c7}
+  .card.selected{border-color:var(--primary);background:var(--primary-light)}
+  .card-top{display:flex;align-items:center;justify-content:space-between}
+  .card .icon-box{
+    width:52px;height:52px;border-radius:14px;background:var(--primary-light);
+    display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+  }
+  .rating{
+    display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;
+    color:var(--ink);background:#fff;border:1px solid var(--line);padding:3px 9px;border-radius:999px;
+  }
+  .card h3{font-size:1.08rem}
+  .card p{color:var(--muted);font-size:.86rem;flex:1}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{
+    font-size:.72rem;font-weight:600;color:var(--ink-light);
+    background:var(--bg);border:1px solid var(--line);padding:3px 9px;border-radius:999px;
+  }
+  .price-row{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:4px;padding-top:14px;border-top:1px solid var(--line);
+  }
+  .price-tag{font-size:1.18rem;font-weight:800;color:var(--primary-dark)}
+  .price-tag small{font-family:'Plus Jakarta Sans';font-weight:600;font-size:.72rem;color:var(--muted)}
+  .add-btn{
+    background:#fff;color:var(--primary-dark);border:1.5px solid var(--primary);
+    border-radius:999px;padding:8px 18px;font-weight:700;font-size:.84rem;transition:.2s;
+  }
+  .add-btn:hover{background:var(--primary-light)}
+  .add-btn.added{background:var(--primary);color:#fff}
+
+  /* ============ Reviews ============ */
+  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px}
+  .review-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:18px;
+    padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:12px;
+  }
+  .review-top{display:flex;align-items:center;justify-content:space-between}
+  .rev-user{display:flex;align-items:center;gap:12px}
+  .rev-avatar{
+    width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--primary-light),#cbe8d8);
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--primary-dark);font-size:.9rem;
+  }
+  .rev-name{font-weight:700;font-size:.92rem}
+  .rev-loc{font-size:.74rem;color:var(--muted)}
+  .verified-badge{
+    font-size:.7rem;font-weight:700;color:var(--primary-dark);background:var(--primary-light);
+    padding:3px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:4px;
+  }
+  .review-text{font-size:.88rem;color:var(--ink-light);line-height:1.55}
+
+  /* ============ Booking Layout ============ */
+  .booking-layout{display:grid;grid-template-columns:1.35fr .95fr;gap:28px;align-items:start}
+  @media(max-width:880px){.booking-layout{grid-template-columns:1fr}}
+  .panel{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);padding:28px;
+  }
+  .panel h3{font-size:1.15rem;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .side{position:sticky;top:94px}
+  @media(max-width:880px){.side{position:static}}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.82rem;font-weight:700;margin-bottom:7px;color:var(--ink-light)}
+  .field label .opt{font-weight:500;color:var(--muted)}
+  .field input,.field select,.field textarea{
+    width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;
+    font-size:.95rem;font-family:inherit;background:var(--bg);color:var(--ink);
+    transition:.2s;appearance:none;
+  }
+  .field select{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364786e' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--primary);background:#fff;
+    box-shadow:0 0 0 4px rgba(15,118,78,.12);
+  }
+  .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--danger)}
+  .field .err{color:var(--danger);font-size:.76rem;margin-top:5px;display:none;font-weight:600}
+  .field.invalid .err{display:block}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:500px){.row2{grid-template-columns:1fr}}
+
+  /* Cart summary */
+  .sum-item{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+  .sum-item .s-main{flex:1}
+  .sum-item .s-main b{display:block;font-size:.9rem}
+  .sum-item .s-main span{font-size:.75rem;color:var(--muted)}
+  .sum-item .s-price{font-weight:700;color:var(--ink);white-space:nowrap}
+  .sum-item .s-x{background:none;border:none;color:var(--danger);cursor:pointer;font-size:.78rem;padding:2px 4px}
+  .empty-cart{
+    color:var(--muted);font-size:.88rem;text-align:center;padding:26px 14px;
+    background:var(--bg);border:1.5px dashed var(--line);border-radius:12px;line-height:1.7;
+  }
+  .sum-total-row{display:flex;justify-content:space-between;font-weight:800;padding-top:16px;border-top:2px solid var(--ink);margin-top:6px}
+  .sum-total-row .amt{font-family:'Space Grotesk';color:var(--primary-dark);font-size:1.28rem}
+  .pay-badge{
+    background:var(--primary-light);border:1px solid #cce5d7;border-radius:12px;
+    padding:13px 15px;font-size:.8rem;color:var(--primary-dark);margin-top:16px;line-height:1.55;
+  }
+
+  /* Steps Indicator */
+  .steps{display:flex;gap:8px;margin-bottom:28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 20px}
+  .steps .step{flex:1;text-align:center;font-size:.78rem;color:var(--muted);font-weight:600}
+  .steps .dot{
+    width:28px;height:28px;border-radius:50%;background:var(--bg);border:1.5px solid var(--line);
+    color:var(--muted);display:flex;align-items:center;justify-content:center;
+    margin:0 auto 5px;font-weight:800;font-size:.8rem;
+  }
+  .steps .step.active .dot{background:var(--primary);border-color:var(--primary);color:#fff}
+  .steps .step.active{color:var(--primary-dark)}
+  .steps .step.done .dot{background:var(--primary-light);border-color:var(--primary);color:var(--primary-dark)}
+
+  /* ============ Confirmation Screen ============ */
+  .success-box{text-align:center;padding:48px 20px;max-width:620px;margin:0 auto}
+  .success-check{
+    width:84px;height:84px;border-radius:50%;background:var(--primary);color:#fff;
+    font-size:2.4rem;display:flex;align-items:center;justify-content:center;
+    margin:0 auto 20px;box-shadow:0 14px 34px rgba(15,118,78,.32);
+    animation:popIn .5s cubic-bezier(.175,.885,.32,1.275);
+  }
+  @keyframes popIn{0%{transform:scale(0)}100%{transform:scale(1)}}
+  .ref-pill{
+    display:inline-block;font-family:'Space Grotesk';font-weight:800;font-size:1.25rem;
+    color:var(--primary-dark);background:var(--primary-light);border:1.5px dashed var(--primary);
+    padding:10px 24px;border-radius:12px;margin:16px 0;letter-spacing:.05em;
+  }
+  .success-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+
+  /* ============ My Bookings ============ */
+  .booking-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow-sm);transition:.2s;
+  }
+  .booking-card:hover{box-shadow:var(--shadow-md)}
+  .b-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+  .b-ref-tag{font-family:'Space Grotesk';font-weight:800;font-size:.95rem}
+  .b-ref-tag code{background:var(--primary-light);color:var(--primary-dark);padding:4px 10px;border-radius:8px}
+  .status-tag{padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.06em}
+  .status-tag.confirmed{background:var(--primary-light);color:var(--primary-dark);border:1px solid #bfe0ce}
+  .b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 20px}
+  .b-col span{display:block;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:3px}
+  .b-col b{font-size:.9rem;color:var(--ink)}
+  .b-foot{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:16px;padding-top:14px;border-top:1px solid var(--line);flex-wrap:wrap;gap:10px;
+  }
+
+  /* ============ Floating WhatsApp Widget ============ */
+  .floating-wa{
+    position:fixed;bottom:26px;right:26px;z-index:90;display:flex;align-items:center;gap:10px;
+    background:#25d366;color:#fff;padding:12px 20px 12px 14px;border-radius:999px;
+    box-shadow:0 10px 28px rgba(37,211,102,.4);font-weight:700;font-size:.9rem;
+    cursor:pointer;transition:.3s cubic-bezier(.16,1,.3,1);text-decoration:none;
+  }
+  .floating-wa:hover{background:#1da851;transform:translateY(-3px);color:#fff}
+  .floating-wa svg{width:26px;height:26px;fill:#fff;flex:none}
+  .floating-wa-badge{
+    position:absolute;top:-4px;right:-4px;width:14px;height:14px;
+    background:#ef4444;border-radius:50%;border:2px solid #fff;
+  }
+  @media(max-width:600px){
+    .floating-wa span{display:none}
+    .floating-wa{padding:14px;bottom:20px;right:20px}
+  }
+
+  /* ============ Toast ============ */
+  #toast{
+    position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(90px);
+    background:var(--ink);color:#fff;padding:12px 24px;border-radius:999px;
+    font-weight:600;font-size:.88rem;transition:.35s cubic-bezier(.2,.9,.3,1.2);
+    z-index:120;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;max-width:90vw;
+  }
+  #toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+  /* ============ Printable Certificate / Invoice Modal ============ */
+  #print-modal{
+    display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);
+    backdrop-filter:blur(6px);z-index:200;padding:20px;overflow-y:auto;align-items:center;justify-content:center;
+  }
+  #print-modal.show{display:flex}
+  .certificate-card{
+    background:#fff;max-width:680px;width:100%;border-radius:18px;padding:36px;
+    position:relative;box-shadow:var(--shadow-lg);border:2px solid #cbe4d6;
+  }
+  .cert-header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid var(--line);padding-bottom:18px;margin-bottom:20px}
+  .cert-seal{
+    border:2px dashed var(--primary);border-radius:50%;width:80px;height:80px;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    text-align:center;font-size:.65rem;font-weight:800;color:var(--primary);line-height:1.2;
+  }
+  .cert-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+  .cert-table td{padding:8px 0;border-bottom:1px solid #f0f4f2}
+  .cert-table td:last-child{text-align:right;font-weight:700}
+  .cert-warranty-box{
+    background:#f4fbf7;border:1.5px dashed var(--primary);border-radius:12px;padding:16px;margin:20px 0;
+  }
+  .cert-actions{display:flex;gap:12px;justify-content:flex-end;margin-top:20px}
+
+  @media print{
+    body *{visibility:hidden}
+    #print-modal, #print-modal *{visibility:visible}
+    #print-modal{position:absolute;left:0;top:0;background:none;padding:0;width:100%}
+    .certificate-card{border:none;box-shadow:none;max-width:100%}
+    .cert-actions, .close-modal{display:none !important}
+  }
+
+  /* ============ Footer ============ */
+  footer{background:#091912;color:#94aca0;margin-top:40px}
+  .foot-inner{
+    max-width:1200px;margin:0 auto;padding:54px clamp(16px,4vw,32px) 28px;
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;
+  }
+  @media(max-width:760px){.foot-inner{grid-template-columns:1fr;gap:30px}}
+  .foot-brand p{font-size:.86rem;line-height:1.7;margin-top:14px;max-width:340px}
+  footer h4{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+  .foot-col div{font-size:.88rem;margin-bottom:10px}
+  .foot-bottom{
+    border-top:1px solid #162a20;padding:18px clamp(16px,4vw,32px);text-align:center;
+    font-size:.78rem;color:#6f887c;
+  }
+
+  @media(max-width:640px){
+    .header-inner{height:auto;padding:12px 16px;flex-direction:column;align-items:stretch;gap:10px}
+    .logo{align-self:flex-start}
+    nav{justify-content:space-between;gap:2px;overflow-x:auto}
+    .nav-link{padding:7px 10px;font-size:.8rem}
+    .benefit-row{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- Emergency Banner -->
+<div class="emergency-bar">
+  <span class="pulse-dot"></span>
+  <span>⚡ <b>Emergency Dispatch Available:</b> Certified team on duty in your area (Arrival within 60–90 mins)</span>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo" onclick="go('home')" title="AS Global Management Home">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 2.5 4.5 5.2v5.6c0 4.6 3.1 8.2 7.5 10.7 4.4-2.5 7.5-6.1 7.5-10.7V5.2L12 2.5Z" fill="#fff" fill-opacity=".95"/>
+          <path d="m8.4 12 2.5 2.7 4.7-5.2" stroke="#0f764e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-title">AS GLOBAL MANAGEMENT<small>Pest Control &amp; Disinfection</small></div>
+    </div>
+    <nav>
+      <button id="nav-home" class="nav-link" onclick="go('home')">Home</button>
+      <button id="nav-services" class="nav-link" onclick="go('services')">Services</button>
+      <button id="nav-reviews" class="nav-link" onclick="go('reviews')">Reviews</button>
+      <button id="nav-bookings" class="nav-link" onclick="go('bookings')">My Bookings</button>
+      <button id="nav-book" class="nav-link is-cta" onclick="go('book')">Book Now<span class="cart-badge" id="cart-badge">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HOME ================= -->
+<section class="view" id="view-home">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">
+        <span>🛡️ Gov-Certified &amp; 30-Day Free Re-Service Warranty</span>
+      </div>
+      <h1>Safe, odorless pest control <span>booked in 60 seconds.</span></h1>
+      <p>Professional pest elimination by AS Global Management. Odorless, kid-safe, pet-safe chemicals with written warranties. <b>Pay only after service is completed.</b></p>
+      
+      <div class="hero-cta">
+        <button class="btn" onclick="go('services')">Book a Service →</button>
+        <button class="btn whatsapp-btn" onclick="openGeneralWhatsApp()">
+          <svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/></svg>
+          WhatsApp Us (9550107466)
+        </button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><b>14,500+</b><span>Treatments done</span></div>
+        <div class="stat"><b>4.9 ★</b><span>Google rated</span></div>
+        <div class="stat"><b>30 Days</b><span>Free re-treatment</span></div>
+        <div class="stat"><b>₹0</b><span>Advance fee</span></div>
+      </div>
+    </div>
+
+    <div class="hero-card-wrap">
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1581578731567-c884e2816aaa?w=1000&q=80&fm=jpg" alt="Certified pest control operator at work">
+        <div class="img-badge">
+          <span>🧑‍🔧 Uniformed, background-verified technician</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="benefit-row">
+          <div class="b-item">
+            <span class="icon">🌿</span>
+            <div><b>Eco-Safe Chemicals</b><span>Odorless &amp; kid-safe</span></div>
+          </div>
+          <div class="b-item">
+            <span class="icon">📜</span>
+            <div><b>Written Warranty</b><span>Certificate provided</span></div>
+          </div>
+          <div class="b-item">
+            <span class="icon">⚡</span>
+            <div><b>Same-Day Slots</b><span>Arrival in 60-90m</span></div>
+          </div>
+          <div class="b-item">
+            <span class="icon">💳</span>
+            <div><b>Post-Pay Only</b><span>Pay via UPI / Cash</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap page" style="padding-top:54px">
+    <div class="sec-head">
+      <span class="eyebrow">Most Requested</span>
+      <h2>Popular Pest Treatments</h2>
+      <p>Targeted solutions with long-lasting residual protection.</p>
+    </div>
+    <div class="grid" id="home-grid"></div>
+    <div style="margin-top:28px;text-align:center">
+      <button class="btn ghost" onclick="go('services')">View all services →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="view" id="view-services">
+  <div class="wrap page">
+    <div class="sec-head">
+      <span class="eyebrow">Full Treatments Catalog</span>
+      <h2>Certified Pest Control Services</h2>
+      <p>Select your required services and proceed to schedule your preferred date &amp; time.</p>
+    </div>
+    <div class="grid" id="services-grid"></div>
+    <div style="margin-top:36px;text-align:center">
+      <button class="btn" onclick="go('book')">Continue to schedule visit →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="view" id="view-reviews">
+  <div class="wrap page">
+    <div class="sec-head">
+      <span class="eyebrow">Customer Feedback</span>
+      <h2>Real customer ratings &amp; reviews</h2>
+      <p>Over 14,000+ homes and offices serviced with a 4.9/5 satisfaction rate.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-top">
+          <div class="rev-user">
+            <div class="rev-avatar">RK</div>
+            <div>
+              <div class="rev-name">Rajesh Kumar</div>
+              <div class="rev-loc">Madhapur · 3 BHK Flat</div>
+            </div>
+          </div>
+          <span class="verified-badge">✓ Verified Customer</span>
+        </div>
+        <div style="color:var(--accent)">★★★★★</div>
+        <p class="review-text">"Had a severe German cockroach issue in our modular kitchen. The gel treatment was completely odorless and worked within 3 days. Loved that I paid only after the technician finished!"</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="rev-user">
+            <div class="rev-avatar">PS</div>
+            <div>
+              <div class="rev-name">Priya Sundaram</div>
+              <div class="rev-loc">Banjara Hills · Independent Villa</div>
+            </div>
+          </div>
+          <span class="verified-badge">✓ Verified Customer</span>
+        </div>
+        <div style="color:var(--accent)">★★★★★</div>
+        <p class="review-text">"Punctual technician, wore full protective gear, and explained the termite drill &amp; inject procedure in detail. The 30-day warranty certificate gave us complete peace of mind."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="rev-user">
+            <div class="rev-avatar">AM</div>
+            <div>
+              <div class="rev-name">Anand Mishra</div>
+              <div class="rev-loc">Gachibowli · Tech Park Office</div>
+            </div>
+          </div>
+          <span class="verified-badge">✓ Verified Customer</span>
+        </div>
+        <div style="color:var(--accent)">★★★★★</div>
+        <p class="review-text">"Booked on WhatsApp at 11 AM and the team arrived by 1:30 PM for emergency rodent control. Extremely systematic entry sealing and bait placements. Highly recommended."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK ================= -->
+<section class="view" id="view-book">
+  <div class="wrap page">
+    <div class="steps">
+      <div class="step done"><div class="dot">✓</div><span>1. Pick service</span></div>
+      <div class="step active"><div class="dot">2</div><span>2. Schedule &amp; address</span></div>
+      <div class="step"><div class="dot">3</div><span>3. Warranty &amp; invoice</span></div>
+    </div>
+
+    <div class="booking-layout">
+      <form class="panel" id="book-form" novalidate onsubmit="confirmBooking(event)">
+        <h3>📋 Schedule Service Visit</h3>
+        
+        <div class="row2">
+          <div class="field" id="f-name">
+            <label>Full name</label>
+            <input type="text" id="in-name" placeholder="e.g. Priya Sharma" autocomplete="name">
+            <div class="err">Please enter your full name (minimum 2 characters).</div>
+          </div>
+          <div class="field" id="f-phone">
+            <label>Phone number (10-digit)</label>
+            <input type="tel" id="in-phone" placeholder="95501 07466" maxlength="14" autocomplete="tel">
+            <div class="err">Please enter a valid 10-digit mobile number.</div>
+          </div>
+        </div>
+
+        <div class="field" id="f-type">
+          <label>Property type</label>
+          <select id="in-type">
+            <option value="">Select property type…</option>
+            <option>1 BHK / Studio</option>
+            <option>2 BHK</option>
+            <option>3 BHK</option>
+            <option>Villa / Row House</option>
+            <option>Restaurant / Commercial Kitchen</option>
+            <option>Office / Commercial space</option>
+          </select>
+          <div class="err">Please choose property size.</div>
+        </div>
+
+        <div class="field" id="f-address">
+          <label>Complete address &amp; landmark</label>
+          <textarea id="in-address" rows="2" placeholder="Flat/House number, Building name, Street, Landmark, Pincode"></textarea>
+          <div class="err">Please provide a detailed address for the technician (at least 10 letters).</div>
+        </div>
+
+        <div class="row2">
+          <div class="field" id="f-date">
+            <label>Preferred appointment date</label>
+            <input type="date" id="in-date">
+            <div class="err">Please select today or a future date.</div>
+          </div>
+          <div class="field" id="f-slot">
+            <label>Arrival slot</label>
+            <select id="in-slot">
+              <option value="">Select time slot…</option>
+              <option>⚡ Immediate / Emergency (Within 90 mins)</option>
+              <option>08:00 AM – 11:00 AM</option>
+              <option>11:00 AM – 02:00 PM</option>
+              <option>02:00 PM – 05:00 PM</option>
+              <option>05:00 PM – 08:00 PM</option>
+            </select>
+            <div class="err">Please select a time slot.</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Specific pest notes <span class="opt">(optional)</span></label>
+          <textarea id="in-notes" rows="2" placeholder="e.g. Infestation in kitchen cabinets, kids or pets at home, gate entry code…"></textarea>
+        </div>
+
+        <button type="submit" class="btn block" id="confirm-btn">Confirm Visit (Pay Post-Service) ✔</button>
+        <p style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:12px">🔒 No advance payment needed. Pay after inspection &amp; treatment.</p>
+      </form>
+
+      <aside class="panel side">
+        <h3>🧾 Treatment Summary</h3>
+        <div id="cart-items"></div>
+        <div class="sum-total-row" id="total-row" style="display:none">
+          <span>Total payable</span>
+          <span class="amt" id="cart-total">₹0</span>
+        </div>
+        <div class="pay-badge">
+          <b>🛡️ 30-Day Zero Pest Guarantee</b>
+          <span>If pests reappear within 30 days, we perform a 100% free re-treatment. Pay by Cash/UPI to technician after work.</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUCCESS ================= -->
+<section class="view" id="view-success">
+  <div class="wrap page">
+    <div class="success-box">
+      <div class="success-check">✓</div>
+      <h2>Booking Confirmed!</h2>
+      <p style="color:var(--muted);font-size:.9rem">Our team is dispatching a certified technician.</p>
+      <div class="ref-pill" id="ref-no">ASM-000000</div>
+      
+      <p id="success-detail" style="line-height:1.7;color:var(--ink-light)"></p>
+
+      <div class="success-actions">
+        <button class="btn whatsapp-btn" id="wa-confirm-btn" onclick="sendWhatsAppConfirmation()">
+          <svg style="width:19px;height:19px;fill:currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/></svg>
+          Send to WhatsApp (9550107466)
+        </button>
+
+        <button class="btn ghost" onclick="openPrintModalCurrent()">
+          🖨️ Print Warranty &amp; Invoice
+        </button>
+        
+        <button class="btn ghost" onclick="go('bookings')">
+          View My Bookings
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MY BOOKINGS ================= -->
+<section class="view" id="view-bookings">
+  <div class="wrap page">
+    <div class="sec-head">
+      <span class="eyebrow">Your Records</span>
+      <h2>My Service Bookings</h2>
+      <p>Stored locally on this device. You can download or print your 30-day warranty certificates anytime.</p>
+    </div>
+    <div id="bookings-list"></div>
+  </div>
+</section>
+
+<!-- ================= PRINT MODAL ================= -->
+<div id="print-modal" onclick="if(event.target===this)closePrintModal()">
+  <div class="certificate-card" id="cert-content">
+    <div class="cert-header">
+      <div>
+        <h2 style="font-size:1.4rem;color:var(--primary-dark)">AS GLOBAL MANAGEMENT</h2>
+        <p style="font-size:.8rem;color:var(--muted)">Govt. Approved Pest Management &amp; Disinfection Services</p>
+        <p style="font-size:.78rem;color:var(--muted)">📞 +91 95501 07466 · ✉️ contact@asglobal.com</p>
+      </div>
+      <div class="cert-seal">
+        <span>30-DAY</span>
+        <span>SERVICE</span>
+        <span>WARRANTY</span>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:14px">
+      <div><b>Booking Reference:</b> <span id="m-ref"></span></div>
+      <div><b>Issued Date:</b> <span id="m-date"></span></div>
+    </div>
+
+    <table class="cert-table">
+      <tr><td>Customer Name:</td><td id="m-name"></td></tr>
+      <tr><td>Contact Phone:</td><td id="m-phone"></td></tr>
+      <tr><td>Service Address:</td><td id="m-address"></td></tr>
+      <tr><td>Scheduled Slot:</td><td id="m-slot"></td></tr>
+      <tr><td>Treatments Booked:</td><td id="m-services"></td></tr>
+      <tr><td>Total Amount Payable:</td><td id="m-total" style="color:var(--primary-dark);font-size:1.1rem"></td></tr>
+    </table>
+
+    <div class="cert-warranty-box">
+      <b style="font-size:.85rem;color:var(--primary-dark)">🛡️ 30-Day Re-Service Warranty Policy:</b>
+      <p style="font-size:.78rem;color:var(--ink-light);margin-top:4px">
+        This document entitles the customer to a complimentary re-treatment if the covered pest infestation reoccurs within 30 days of initial service. Please retain this reference code for warranty validation.
+      </p>
+    </div>
+
+    <div class="cert-actions">
+      <button class="btn ghost close-modal" onclick="closePrintModal()">Close</button>
+      <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Floating WhatsApp ============ -->
+<a href="https://wa.me/919550107466?text=Hello%20AS%20Global%20Management,%20I%20want%20to%20inquire%20about%20pest%20control%20services." target="_blank" class="floating-wa" aria-label="Chat on WhatsApp">
+  <span class="floating-wa-badge"></span>
+  <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.92-9.91-9.92z"/></svg>
+  <span>Book on WhatsApp</span>
+</a>
+
+<div id="toast"></div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="brand-title" style="color:#fff">AS GLOBAL MANAGEMENT<small style="color:#6f887c">Pest Control Services</small></div>
+      <p>Government certified, eco-safe pest management solutions for residential and commercial spaces. Odorless treatments with written 30-day warranty coverage.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <div>Cockroach Gel Treatment</div>
+      <div>Termite Drill-and-Inject</div>
+      <div>Bed Bugs Steam Treatment</div>
+      <div>Rodent &amp; Mosquito Control</div>
+      <div>Commercial Disinfection</div>
+    </div>
+    <div class="foot-col">
+      <h4>Direct Contact</h4>
+      <div>📞 +91 95501 07466</div>
+      <div>💬 WhatsApp: +91 95501 07466</div>
+      <div>✉️ contact@asglobal.com</div>
+      <div>⏱️ 7 Days a week: 8 AM – 9 PM</div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    © 2026 <b>AS GLOBAL MANAGEMENT</b> · Professional Pest Control Services · All rights reserved.
+  </div>
+</footer>
+
+<script>
+const GOOGLE_SHEET_URL = ""; // Optional: Paste your Google Apps Script Web App URL here
+const OWNER_PHONE = "919550107466";
+const OWNER_EMAIL = "contact@asglobal.com";
+
+const SERVICES = [
+  {id:"cockroach", icon:"🪳", name:"Cockroach Control", desc:"Odorless, herbal gel treatment for modular kitchens and cabinets. 100% kitchen-safe.", price:799, rating:4.9, chips:["Gel treatment","No smell","Kid-safe"]},
+  {id:"termite", icon:"🐜", name:"Termite Treatment", desc:"Drill-and-inject barrier protection for walls, frames, and wooden furniture.", price:2499, rating:4.9, chips:["Wall barrier","Warranty card","Deep drilling"]},
+  {id:"bedbugs", icon:"🛏️", name:"Bed Bugs Treatment", desc:"Double-visit high temperature steam + residual chemical protocol for beds and sofas.", price:1599, rating:4.8, chips:["2 visits","Steam kill","Mattress safe"]},
+  {id:"rodent", icon:"🐀", name:"Rodent Control", desc:"Smart bait stations, non-toxic gum traps and entry-hole proofing for rats.", price:1199, rating:4.7, chips:["Entry sealing","Smart baits","Follow up"]},
+  {id:"mosquito", icon:"🦟", name:"Mosquito Fogging", desc:"Thermal outdoor fogging + anti-larval treatment for terraces, gardens, and societies.", price:999, rating:4.8, chips:["Larvicide","Thermal fog","Society plans"]},
+  {id:"ants", icon:"🕸️", name:"Ants & Spider Control", desc:"Residual perimeter barrier spray targeting ants, spiders, and crawling insects.", price:899, rating:4.7, chips:["Odorless spray","Residual effect","Pet safe"]},
+  {id:"woodborer", icon:"🪵", name:"Wood Borer Control", desc:"Targeted injection treatment preserving precious furniture from powder-falling pests.", price:1399, rating:4.8, chips:["Wood injection","Non-staining","Long lasting"]},
+  {id:"disinfection", icon:"🧴", name:"Hospital Disinfection", desc:"Full premises sanitization wiping out 99.9% viruses and bacteria.", price:1299, rating:4.9, chips:["Hospital grade","Certificate","Safe mist"]},
+];
+
+const CART_KEY = "asgm_cart_v2", BOOKINGS_KEY = "asgm_bookings_v2";
+let cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+let latestBooking = null;
+
+const $ = id => document.getElementById(id);
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+
+function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); renderCart(); renderCards(); }
+function saveBookings(b){ localStorage.setItem(BOOKINGS_KEY, JSON.stringify(b)); }
+
+function go(view){
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("show"));
+  $("view-" + view).classList.add("show");
+  document.querySelectorAll(".nav-link").forEach(b => b.classList.remove("active"));
+  $("nav-" + view)?.classList.add("active");
+  if(view === "bookings") renderBookings();
+  if(view === "book") renderCart();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function cardHTML(s){
+  const inCart = cart.includes(s.id);
+  const chips = (s.chips || []).map(c => `<span class="chip">${c}</span>`).join("");
+  return `<div class="card ${inCart ? "selected" : ""}">
+    <div class="card-top">
+      <div class="icon-box">${s.icon}</div>
+      <span class="rating">★ ${s.rating}</span>
+    </div>
+    <h3>${s.name}</h3>
+    <p>${s.desc}</p>
+    <div class="chips">${chips}</div>
+    <div class="price-row">
+      <span class="price-tag">${fmt(s.price)} <small>onwards</small></span>
+      <button class="add-btn ${inCart ? "added" : ""}" onclick="toggleCart('${s.id}')">
+        ${inCart ? "✓ Added" : "+ Add"}
+      </button>
+    </div>
+  </div>`;
+}
+
+function renderCards(){
+  $("home-grid").innerHTML = SERVICES.slice(0,4).map(cardHTML).join("");
+  $("services-grid").innerHTML = SERVICES.map(cardHTML).join("");
+}
+
+function toggleCart(id){
+  if(cart.includes(id)){
+    cart = cart.filter(x => x !== id);
+    toast("Item removed from booking");
+  } else {
+    cart.push(id);
+    toast("✓ Added to your booking");
+  }
+  saveCart();
+}
+
+function renderCart(){
+  $("cart-badge").textContent = cart.length;
+  const box = $("cart-items");
+  if(!box) return;
+  if(cart.length === 0){
+    box.innerHTML = `<div class="empty-cart">No service selected yet.<br><a href="#" onclick="go('services');return false">Explore services →</a></div>`;
+    $("total-row").style.display = "none";
+  } else {
+    box.innerHTML = cart.map(id => {
+      const s = SERVICES.find(x => x.id === id);
+      return `<div class="sum-item">
+        <div class="s-main">
+          <b>${s.icon} ${s.name}</b>
+          <span>Includes warranty &amp; inspection</span>
+        </div>
+        <span class="s-price">${fmt(s.price)}</span>
+        <button class="s-x" onclick="toggleCart('${id}')" title="Remove">✕</button>
+      </div>`;
+    }).join("");
+    $("total-row").style.display = "flex";
+  }
+  const total = cart.reduce((sum,id) => sum + SERVICES.find(s => s.id === id).price, 0);
+  $("cart-total").textContent = fmt(total);
+}
+
+$("in-date").min = new Date().toISOString().split("T")[0];
+
+function validate(){
+  const checks = [
+    ["f-name", $("in-name").value.trim().length >= 2],
+    ["f-phone", /^[6-9]\d{9}$|^(\+91[\s-]?)?[6-9]\d{9}$/.test($("in-phone").value.replace(/\s+/g,""))],
+    ["f-type", $("in-type").value !== ""],
+    ["f-address", $("in-address").value.trim().length >= 10],
+    ["f-date", $("in-date").value !== "" && $("in-date").value >= $("in-date").min],
+    ["f-slot", $("in-slot").value !== ""]
+  ];
+  let valid = true;
+  checks.forEach(([id, ok]) => {
+    $(id).classList.toggle("invalid", !ok);
+    if(!ok) valid = false;
+  });
+  if(!valid) toast("⚠ Please fill in the highlighted details");
+  return valid;
+}
+
+async function syncToGoogleSheet(booking){
+  if(!GOOGLE_SHEET_URL) return;
+  try{
+    await fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(booking)
+    });
+  }catch(e){}
+}
+
+async function sendBookingEmail(b){
+  try{
+    await fetch(`https://formsubmit.co/ajax/${OWNER_EMAIL}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        _subject: `New Booking ${b.ref} | AS GLOBAL MANAGEMENT`,
+        _template: "table",
+        "Booking Ref": b.ref,
+        "Customer Name": b.name,
+        "Phone": b.phone,
+        "Property Type": b.type,
+        "Address": b.address,
+        "Visit Date": b.date,
+        "Slot": b.slot,
+        "Services Booked": b.services,
+        "Total (Post-pay)": fmt(b.total),
+        "Special Notes": b.notes || "None"
+      })
+    });
+  }catch(e){}
+}
+
+function confirmBooking(e){
+  e.preventDefault();
+  if(cart.length === 0){ toast("⚠ Please select at least one service"); go("services"); return; }
+  if(!validate()) return;
+
+  const total = cart.reduce((sum,id) => sum + SERVICES.find(s => s.id === id).price, 0);
+  const names = cart.map(id => SERVICES.find(s => s.id === id).name).join(", ");
+  const ref = "ASM-" + Math.floor(100000 + Math.random() * 900000);
+
+  const booking = {
+    ref,
+    name: $("in-name").value.trim(),
+    phone: $("in-phone").value.trim(),
+    type: $("in-type").value,
+    address: $("in-address").value.trim(),
+    date: $("in-date").value,
+    slot: $("in-slot").value,
+    notes: $("in-notes").value.trim(),
+    services: names,
+    total,
+    status: "confirmed",
+    placed: new Date().toLocaleDateString("en-IN")
+  };
+
+  latestBooking = booking;
+
+  const bookings = JSON.parse(localStorage.getItem(BOOKINGS_KEY) || "[]");
+  bookings.unshift(booking);
+  saveBookings(bookings);
+
+  $("ref-no").textContent = ref;
+  $("success-detail").innerHTML = `
+    Treatment <b>${names}</b> is scheduled for <b>${new Date(booking.date).toDateString()}</b> (${booking.slot}).<br>
+    Payable amount: <b>${fmt(total)}</b> after completion. Our technician will contact <b>${booking.phone}</b> before arrival.
+  `;
+
+  syncToGoogleSheet(booking);
+  sendBookingEmail(booking);
+
+  cart = []; saveCart();
+  $("book-form").reset();
+  go("success");
+}
+
+function sendWhatsAppConfirmation(){
+  if(!latestBooking) return;
+  const b = latestBooking;
+  const msg = `*NEW BOOKING CONFIRMATION* %0A` +
+              `--------------------------------%0A` +
+              `*Ref No:* ${b.ref}%0A` +
+              `*Name:* ${b.name}%0A` +
+              `*Phone:* ${b.phone}%0A` +
+              `*Property:* ${b.type}%0A` +
+              `*Address:* ${b.address}%0A` +
+              `*Date:* ${b.date}%0A` +
+              `*Slot:* ${b.slot}%0A` +
+              `*Services:* ${b.services}%0A` +
+              `*Total:* ${fmt(b.total)} (Pay After Service)%0A` +
+              `*Notes:* ${b.notes || "None"}%0A` +
+              `--------------------------------%0A` +
+              `Please dispatch our technician. Thank you!`;
+  window.open(`https://wa.me/${OWNER_PHONE}?text=${msg}`, "_blank");
+}
+
+function openGeneralWhatsApp(){
+  const msg = encodeURIComponent("Hello AS Global Management, I would like to inquire/book a pest control treatment.");
+  window.open(`https://wa.me/${OWNER_PHONE}?text=${msg}`, "_blank");
+}
+
+function openPrintModal(b){
+  $("m-ref").textContent = b.ref;
+  $("m-date").textContent = b.placed || new Date().toLocaleDateString();
+  $("m-name").textContent = b.name;
+  $("m-phone").textContent = b.phone;
+  $("m-address").textContent = `${b.type} — ${b.address}`;
+  $("m-slot").textContent = `${new Date(b.date).toDateString()} (${b.slot})`;
+  $("m-services").textContent = b.services;
+  $("m-total").textContent = fmt(b.total) + " (Pay After Service)";
+  $("print-modal").classList.add("show");
+}
+
+function openPrintModalCurrent(){
+  if(latestBooking) openPrintModal(latestBooking);
+}
+
+function closePrintModal(){
+  $("print-modal").classList.remove("show");
+}
+
+function renderBookings(){
+  const bookings = JSON.parse(localStorage.getItem(BOOKINGS_KEY) || "[]");
+  const list = $("bookings-list");
+  if(bookings.length === 0){
+    list.innerHTML = `<div class="empty-cart" style="padding:40px">📭 No active bookings found on this device.<br><a href="#" onclick="go('services');return false">Book your first service →</a></div>`;
+    return;
+  }
+  list.innerHTML = bookings.map(b => `
+    <div class="booking-card">
+      <div class="b-head">
+        <div class="b-ref-tag">Booking Ref: <code>${b.ref}</code></div>
+        <span class="status-tag confirmed">● CONFIRMED</span>
+      </div>
+      <div class="b-grid">
+        <div class="b-col"><span>Services</span><b>${b.services}</b></div>
+        <div class="b-col"><span>Visit Schedule</span><b>${new Date(b.date).toDateString()} · ${b.slot}</b></div>
+        <div class="b-col"><span>Customer</span><b>${b.name} (${b.phone})</b></div>
+        <div class="b-col"><span>Property / Address</span><b>${b.type} — ${b.address}</b></div>
+      </div>
+      <div class="b-foot">
+        <span style="font-weight:800;color:var(--primary-dark)">Total: ${fmt(b.total)}</span>
+        <div style="display:flex;gap:10px">
+          <button class="btn ghost" style="padding:6px 14px;font-size:.82rem" onclick='openPrintModal(${JSON.stringify(b)})'>
+            🖨️ Warranty &amp; Bill
+          </button>
+          <button class="btn ghost" style="padding:6px 14px;font-size:.82rem;color:var(--danger)" onclick="cancelBooking('${b.ref}')">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function cancelBooking(ref){
+  if(confirm(`Are you sure you want to cancel booking ${ref}?`)){
+    const b = JSON.parse(localStorage.getItem(BOOKINGS_KEY) || "[]").filter(x => x.ref !== ref);
+    saveBookings(b);
+    renderBookings();
+    toast(`Booking ${ref} cancelled`);
+  }
+}
+
+let toastT;
+function toast(m){
+  const t = $("toast");
+  t.textContent = m;
+  t.classList.add("show");
+  clearTimeout(toastT);
+  toastT = setTimeout(() => t.classList.remove("show"), 2400);
+}
+
+renderCards();
+renderCart();
+go("home");
+</script>
+</body>
+</html>
