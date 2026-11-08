@@ -99,6 +99,13 @@
     display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center;
   }
   @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:44px}}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+  .g-item{
+    border-radius:16px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:var(--shadow-sm);position:relative;aspect-ratio:4/3;background:#fff;
+  }
+  .g-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+  .g-item:hover img{transform:scale(1.05)}
   .hero-text h1{font-size:clamp(2rem,5vw,3.15rem);line-height:1.12;margin-bottom:18px}
   .hero-text h1 em{font-style:normal;color:var(--green);position:relative;white-space:nowrap}
   .hero-text h1 em::after{
@@ -124,6 +131,16 @@
   .hero-stats .stat span{font-size:.8rem;color:var(--muted);font-weight:600}
 
   /* hero side card */
+  .hero-img{
+    position:relative;border-radius:18px;overflow:hidden;
+    box-shadow:var(--shadow-lg);border:1px solid var(--line);margin-bottom:16px;aspect-ratio:4/3;
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .img-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;
+    background:linear-gradient(transparent,rgba(10,40,28,.78));color:#fff;
+    font-size:.8rem;font-weight:600;
+  }
   .hero-card{
     background:var(--card);border:1px solid var(--line);border-radius:22px;
     box-shadow:var(--shadow-lg);padding:28px;position:relative;overflow:hidden;
@@ -403,7 +420,12 @@
         <div class="stat"><b>100%</b><span>Pay after service</span></div>
       </div>
     </div>
-    <div class="hero-card">
+    <div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1581578731567-c884e2816aaa?w=1000&q=80&fm=jpg" alt="AS Global Management technician spraying pest treatment on a home porch" loading="eager">
+        <span class="img-cap">🧑‍🔧 On-site treatment by a certified technician</span>
+      </div>
+      <div class="hero-card">
       <h3>Why customers trust us</h3>
       <div class="benefit">
         <div class="b-icon">🎓</div>
@@ -421,6 +443,7 @@
         <b>"Booked at 10 AM, treatment done by 2 PM. The team was punctual and professional."</b><br>— Meera K., 3 BHK customer
       </div>
     </div>
+    </div>
   </div>
 
   <div class="how">
@@ -434,6 +457,26 @@
 
   <div class="wrap page" style="padding-top:52px">
     <div class="sec-head">
+      <span class="eyebrow">Gallery</span>
+      <h2>Our work in action</h2>
+      <p>A glimpse of the treatments we deliver every day.</p>
+    </div>
+    <div class="gallery">
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1591735115730-4bf3a351cfe8?w=900&q=80&fm=jpg" alt="Treating a wasp nest in a wooden window frame" loading="lazy">
+        <span class="img-cap">🐝 Wasp nest removal — precision work</span>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1581578017093-cd30fce4eeb7?w=900&q=80&fm=jpg" alt="Safe garden and terrace pest treatment" loading="lazy">
+        <span class="img-cap">🌿 Safe outdoor &amp; garden treatment</span>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80&fm=jpg" alt="Deep disinfection of a home interior" loading="lazy">
+        <span class="img-cap">🧴 Deep disinfection for homes &amp; offices</span>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:56px">
       <span class="eyebrow">Most booked</span>
       <h2>Popular services</h2>
       <p>Treatments customers trust the most this month.</p>
@@ -584,6 +627,7 @@
         <div class="brand-name">AS GLOBAL MANAGEMENT<small>Pest Control Services</small></div>
       </div>
       <p>Professional, certified pest management for homes and businesses. Trained technicians, government-approved eco-safe chemicals, and a written 30-day service warranty on every job.</p>
+      <div style="margin-top:14px;font-size:.75rem;color:#6f887c">📸 Photos by Unsplash photographers (free license)</div>
     </div>
     <div class="foot-col">
       <h4>Services</h4>
@@ -621,6 +665,7 @@ const SERVICES = [
 
 /* ============ State ============ */
 const CART_KEY = "asgm_cart", BOOKINGS_KEY = "asgm_bookings";
+const OWNER_EMAIL = "chintu05190@gmail.com";   // ← business owner email for booking notifications
 let cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
 const $ = id => document.getElementById(id);
 const fmt = n => "₹" + n.toLocaleString("en-IN");
@@ -722,6 +767,36 @@ function validate(){
   return ok;
 }
 
+/* ============ Email notification to owner ============ */
+async function sendBookingEmail(b){
+  try{
+    const res = await fetch(`https://formsubmit.co/ajax/${OWNER_EMAIL}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        _subject:    `New booking ${b.ref} | AS GLOBAL MANAGEMENT`,
+        _template:   "table",
+        _captcha:    "false",
+        "Booking ref":           b.ref,
+        "Customer name":         b.name,
+        "Phone":                 b.phone,
+        "Property type":         b.type,
+        "Service address":       b.address,
+        "Preferred date":        new Date(b.date).toDateString(),
+        "Time slot":             b.slot,
+        "Services booked":       b.services,
+        "Total (pay after service)": fmt(b.total),
+        "Special notes":         b.notes || "—",
+        "Booked on":             b.placed,
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.success !== "false") return { ok: true };
+    if (res.ok && /activat/i.test(data.message || "")) return { pending: true };
+    return null;
+  } catch(err){ return null; }
+}
+
 function confirmBooking(e){
   e.preventDefault();
   if(cart.length === 0){ toast("⚠ Add at least one service first"); go("services"); return; }
@@ -748,6 +823,17 @@ function confirmBooking(e){
   cart = []; saveCart();
   $("book-form").reset();
   go("success");
+
+  // email the booking details to the business owner
+  sendBookingEmail(bookings[0]).then(result => {
+    if(result && result.pending){
+      toast("📩 Setup step: open Gmail and click the FormSubmit 'Activate Form' link (one time)");
+    } else if(result){
+      toast(`📩 Booking ${bookings[0].ref} emailed to AS GLOBAL MANAGEMENT`);
+    } else {
+      toast("⚠ Email failed — booking is still saved in My Bookings");
+    }
+  });
 }
 
 /* ============ My bookings ============ */
