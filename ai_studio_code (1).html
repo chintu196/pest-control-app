@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>AS Global Management — Professional Pest Control Booking</title>
+<meta name="description" content="Book certified pest control services online in minutes. Cockroach, termite, bed bug, rodent treatments with eco-safe chemicals and a 30-day service warranty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Premium Modern Emerald & Deep Slate Scheme */
+    --brand-primary: #059669;
+    --brand-hover: #047857;
+    --brand-dark: #062e20;
+    --brand-darker: #031c13;
+    --brand-accent: #10b981;
+    --brand-mint: #ecfdf5;
+    --brand-mint-subtle: #f0fdf4;
+    --amber: #f59e0b;
+    --amber-soft: #fffbeb;
+    
+    --ink: #0f172a;
+    --ink-light: #334155;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --line-subtle: #edf2f7;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --danger: #ef4444;
+    --danger-soft: #fef2f2;
+    
+    --radius-sm: 8px;
+    --radius: 16px;
+    --radius-lg: 24px;
+    
+    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.07), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+    --shadow-lg: 0 20px 35px -8px rgba(6, 46, 32, 0.14), 0 10px 15px -3px rgba(6, 46, 32, 0.05);
+    --shadow-glow: 0 0 24px rgba(16, 185, 129, 0.28);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+    background:var(--bg);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.6;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  h1,h2,h3,.brand-name{font-family:'Outfit','Plus Jakarta Sans',sans-serif;letter-spacing:-.025em}
+  button{font-family:inherit}
+  a{color:var(--brand-primary);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ============ Header ============ */
+  header{
+    position:sticky;top:0;z-index:70;
+    background:rgba(255,255,255,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s ease;
+  }
+  .header-inner{
+    max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px);
+    height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .logo{display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none;transition:transform .2s}
+  .logo:active{transform:scale(0.98)}
+  .logo-mark{
+    width:42px;height:42px;border-radius:12px;flex:none;
+    background:linear-gradient(135deg,var(--brand-primary),var(--brand-dark));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow-sm);transition:box-shadow .3s;
+  }
+  .logo:hover .logo-mark{box-shadow:var(--shadow-glow)}
+  .logo-mark svg{width:24px;height:24px}
+  .brand-name{font-size:1.02rem;font-weight:800;color:var(--ink);line-height:1.2;white-space:nowrap}
+  .brand-name small{display:block;font-family:'Plus Jakarta Sans';font-size:.67rem;font-weight:700;color:var(--brand-primary);letter-spacing:.12em;text-transform:uppercase}
+  
+  nav{display:flex;align-items:center;gap:6px}
+  .nav-link{
+    position:relative;padding:9px 16px;border-radius:12px;cursor:pointer;
+    font-size:.9rem;font-weight:600;color:var(--ink-light);background:transparent;border:none;
+    transition:all .2s cubic-bezier(.4,0,.2,1);white-space:nowrap;
+  }
+  .nav-link:hover{background:var(--brand-mint);color:var(--brand-primary)}
+  .nav-link.active{color:var(--brand-primary);background:var(--brand-mint-subtle);font-weight:700}
+  .nav-link.is-cta{
+    background:linear-gradient(135deg,var(--brand-primary),var(--brand-hover));
+    color:#fff;padding:9px 20px;border-radius:999px;
+    box-shadow:0 4px 14px rgba(5,150,105,.3);
+  }
+  .nav-link.is-cta:hover{box-shadow:0 6px 18px rgba(5,150,105,.45);transform:translateY(-1px);color:#fff}
+  .cart-badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:20px;height:20px;padding:0 5px;margin-left:8px;border-radius:999px;
+    background:#fff;color:var(--brand-dark);font-size:.7rem;font-weight:800;
+    border:1.5px solid rgba(255,255,255,.6);
+    transition:transform .3s cubic-bezier(.34,1.56,.64,1);
+  }
+  .cart-badge.bump{animation:badgePop .35s ease}
+  @keyframes badgePop{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
+
+  /* ============ Views ============ */
+  .view{display:none}
+  .view.show{display:block;animation:viewIn .4s cubic-bezier(0.16, 1, 0.3, 1)}
+  @keyframes viewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+  .page{padding-top:40px;padding-bottom:90px}
+
+  .sec-head{margin-bottom:34px;max-width:640px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--brand-primary);background:var(--brand-mint);
+    padding:6px 14px;border-radius:999px;margin-bottom:14px;
+    border:1px solid #d1fae5;
+  }
+  .sec-head h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:8px;color:var(--brand-dark)}
+  .sec-head p{color:var(--muted);font-size:1.02rem}
+
+  /* ============ Hero ============ */
+  .hero{
+    max-width:1200px;margin:0 auto;padding:48px clamp(16px,4vw,32px) 0;
+    display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,5vw,64px);align-items:center;
+  }
+  .hero-text h1{font-size:clamp(2.1rem,4.8vw,3.4rem);line-height:1.15;margin-bottom:20px;color:var(--brand-dark)}
+  .hero-text h1 em{
+    font-style:normal;
+    background:linear-gradient(135deg,var(--brand-primary),#0d9488);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    position:relative;white-space:nowrap;
+  }
+  .hero-text p{color:var(--ink-light);font-size:1.06rem;max-width:520px;margin-bottom:28px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+  
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;
+    background:linear-gradient(135deg,var(--brand-primary),var(--brand-hover));
+    color:#fff;border:none;padding:14px 28px;border-radius:14px;
+    font-size:.98rem;font-weight:700;transition:all .25s cubic-bezier(.4,0,.2,1);
+    box-shadow:0 8px 22px rgba(5,150,105,.28);
+    position:relative;overflow:hidden;
+  }
+  .btn:hover{box-shadow:0 12px 28px rgba(5,150,105,.38);transform:translateY(-2px);color:#fff}
+  .btn:active{transform:scale(0.98)}
+  .btn.ghost{
+    background:#fff;color:var(--brand-dark);border:1.5px solid var(--line);
+    box-shadow:var(--shadow-sm);
+  }
+  .btn.ghost:hover{border-color:var(--brand-primary);background:var(--brand-mint);transform:translateY(-2px);color:var(--brand-primary)}
+  .btn.block{width:100%;justify-content:center}
+  .btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+
+  .hero-stats{display:flex;gap:clamp(20px,3vw,44px);flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px}
+  .hero-stats .stat b{display:block;font-family:'Outfit';font-size:1.45rem;font-weight:800;color:var(--brand-dark)}
+  .hero-stats .stat span{font-size:.82rem;color:var(--muted);font-weight:600}
+
+  .hero-img{
+    position:relative;border-radius:22px;overflow:hidden;
+    box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.8);margin-bottom:16px;aspect-ratio:4/3;
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .hero-img:hover img{transform:scale(1.04)}
+  .img-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:32px 18px 14px;
+    background:linear-gradient(transparent,rgba(3,28,19,.85));color:#fff;
+    font-size:.82rem;font-weight:600;backdrop-filter:blur(2px);
+  }
+  .hero-card{
+    background:var(--card);border:1px solid var(--line);border-radius:24px;
+    box-shadow:var(--shadow-md);padding:28px;position:relative;overflow:hidden;
+  }
+  .hero-card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:5px;
+    background:linear-gradient(90deg,var(--brand-primary),var(--amber));
+  }
+  .hero-card h3{font-size:1.05rem;margin-bottom:18px;color:var(--brand-dark)}
+  .benefit{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .benefit:last-child{border:none;padding-bottom:0}
+  .benefit .b-icon{
+    width:42px;height:42px;flex:none;border-radius:12px;background:var(--brand-mint);
+    display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+  }
+  .benefit b{display:block;font-size:.94rem;font-weight:700;color:var(--ink)}
+  .benefit span{font-size:.82rem;color:var(--muted)}
+  .hero-card .mini-review{
+    margin-top:18px;background:var(--brand-mint-subtle);border-radius:14px;padding:14px 16px;
+    font-size:.85rem;color:var(--ink-light);line-height:1.55;border:1px solid #d1fae5;
+  }
+  .hero-card .mini-review b{color:var(--brand-dark)}
+
+  /* ============ How it works ============ */
+  .how{max-width:1200px;margin:48px auto 0;padding:0 clamp(16px,4vw,32px)}
+  .how-grid{
+    background:linear-gradient(135deg,var(--brand-darker) 0%,var(--brand-dark) 60%,#0f4530 100%);
+    border-radius:24px;padding:38px clamp(20px,4vw,48px);
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;color:#fff;
+    box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+  }
+  .how-grid::after{
+    content:"";position:absolute;top:-50%;right:-20%;width:300px;height:300px;
+    background:radial-gradient(circle,rgba(16,185,129,.18) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .how-step{display:flex;gap:16px;align-items:flex-start}
+  .how-step .num{
+    width:44px;height:44px;flex:none;border-radius:14px;
+    background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.24);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Outfit';font-weight:800;font-size:1.1rem;color:var(--brand-accent);
+  }
+  .how-step b{display:block;font-size:1rem;margin-bottom:3px}
+  .how-step span{font-size:.84rem;opacity:.84;line-height:1.5}
+  .how-title{grid-column:1/-1;font-family:'Outfit';font-size:1.25rem;font-weight:700}
+
+  /* ============ Gallery ============ */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .g-item{
+    border-radius:18px;overflow:hidden;border:1px solid var(--line);
+    box-shadow:var(--shadow-sm);position:relative;aspect-ratio:4/3;background:#fff;
+  }
+  .g-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .g-item:hover img{transform:scale(1.06)}
+
+  /* ============ Cards / Services ============ */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+  .card{
+    background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;gap:12px;
+    transition:all .25s cubic-bezier(.34,1.56,.64,1);
+    box-shadow:var(--shadow-sm);position:relative;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-md);
+    border-color:var(--brand-accent);
+  }
+  .card.selected{
+    border-color:var(--brand-primary);
+    background:var(--brand-mint-subtle);
+    box-shadow:0 0 0 1px var(--brand-primary), var(--shadow-sm);
+  }
+  .card-top{display:flex;align-items:center;justify-content:space-between}
+  .card .icon{
+    width:52px;height:52px;border-radius:14px;background:var(--brand-mint);
+    display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+    transition:transform .25s ease;
+  }
+  .card:hover .icon{transform:scale(1.1)}
+  .rating{
+    display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:700;
+    color:var(--ink-light);background:var(--bg);border:1px solid var(--line);
+    padding:4px 10px;border-radius:999px;
+  }
+  .rating .star{color:var(--amber)}
+  .card h3{font-size:1.08rem;color:var(--brand-dark)}
+  .card p{color:var(--muted);font-size:.875rem;flex:1;line-height:1.55}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{
+    font-size:.72rem;font-weight:600;color:var(--ink-light);
+    background:var(--bg);border:1px solid var(--line);
+    padding:3px 10px;border-radius:999px;
+  }
+  .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:6px;padding-top:14px;border-top:1px solid var(--line)}
+  .price{font-family:'Outfit';font-weight:800;color:var(--brand-dark);font-size:1.2rem}
+  .price small{font-family:'Plus Jakarta Sans';font-weight:600;color:var(--muted);font-size:.72rem}
+  .add-btn{
+    background:#fff;color:var(--brand-dark);border:1.5px solid var(--brand-primary);
+    border-radius:999px;padding:9px 20px;font-weight:700;font-size:.86rem;
+    cursor:pointer;transition:all .2s;
+  }
+  .add-btn:hover{background:var(--brand-mint);color:var(--brand-primary)}
+  .add-btn.added{
+    background:var(--brand-primary);color:#fff;border-color:var(--brand-primary);
+  }
+  .add-btn.added:hover{background:var(--brand-hover)}
+
+  /* ============ Booking Layout ============ */
+  .booking-layout{display:grid;grid-template-columns:1.35fr .95fr;gap:28px;align-items:start}
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-sm);padding:30px;
+  }
+  .panel h3{font-size:1.15rem;margin-bottom:20px;display:flex;align-items:center;gap:10px;color:var(--brand-dark)}
+  .side{position:sticky;top:92px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:.84rem;font-weight:700;margin-bottom:8px;color:var(--ink-light)}
+  .field label .opt{font-weight:500;color:var(--muted)}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;
+    font-size:16px; /* Prevents auto-zoom on iOS */
+    font-family:inherit;background:var(--bg);color:var(--ink);
+    transition:all .2s;appearance:none;
+  }
+  .field textarea{resize:vertical}
+  .field select{
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--brand-primary);background:#fff;
+    box-shadow:0 0 0 4px rgba(5,150,105,.12);
+  }
+  .field .err{color:var(--danger);font-size:.78rem;margin-top:6px;display:none;font-weight:600}
+  .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--danger);animation:shake .3s}
+  .field.invalid .err{display:block}
+  @keyframes shake{0%,100%{transform:none}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .secure-note{display:flex;align-items:center;gap:8px;justify-content:center;color:var(--muted);font-size:.8rem;margin-top:16px}
+
+  /* Cart summary */
+  .sum-item{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+  .sum-item:last-of-type{border-bottom:none}
+  .sum-item .s-icon{font-size:1.15rem}
+  .sum-item .s-main{flex:1}
+  .sum-item .s-main b{display:block;font-size:.92rem;color:var(--brand-dark)}
+  .sum-item .s-main span{font-size:.78rem;color:var(--muted)}
+  .sum-item .s-price{font-weight:700;color:var(--ink);white-space:nowrap}
+  .sum-item .s-x{
+    background:none;border:none;color:var(--danger);cursor:pointer;
+    font-size:.8rem;font-weight:700;opacity:.7;padding:4px 6px;margin-left:6px;
+    border-radius:6px;transition:.2s;
+  }
+  .sum-item .s-x:hover{opacity:1;background:var(--danger-soft)}
+  .empty-cart{
+    color:var(--muted);font-size:.9rem;text-align:center;padding:28px 14px;
+    background:var(--bg);border:1.5px dashed var(--line);border-radius:14px;line-height:1.7;
+  }
+  .empty-cart a{font-weight:700;color:var(--brand-primary)}
+  .sum-total-row{display:flex;justify-content:space-between;align-items:center;font-weight:800;padding-top:18px;border-top:2px solid var(--ink);margin-top:8px}
+  .sum-total-row .amt{font-family:'Outfit';color:var(--brand-primary);font-size:1.35rem}
+  .pay-note{
+    display:flex;gap:10px;align-items:flex-start;background:var(--brand-mint);
+    border:1px solid #d1fae5;border-radius:14px;padding:14px 16px;
+    font-size:.82rem;color:var(--brand-dark);margin-top:18px;line-height:1.55;
+  }
+  .pay-note b{display:block;font-size:.85rem;margin-bottom:2px}
+
+  /* Steps indicator */
+  .steps{
+    display:flex;gap:8px;margin-bottom:30px;background:var(--card);
+    border:1px solid var(--line);border-radius:16px;padding:16px 20px;box-shadow:var(--shadow-sm);
+  }
+  .steps .step{flex:1;text-align:center;position:relative;font-size:.82rem;color:var(--muted);font-weight:600}
+  .steps .dot{
+    width:32px;height:32px;border-radius:50%;background:var(--bg);border:1.5px solid var(--line);
+    color:var(--muted);display:flex;align-items:center;justify-content:center;
+    margin:0 auto 6px;font-weight:800;font-size:.85rem;transition:all .3s ease;
+  }
+  .steps .step.active .dot{background:var(--brand-primary);border-color:var(--brand-primary);color:#fff;box-shadow:var(--shadow-glow)}
+  .steps .step.active{color:var(--brand-primary);font-weight:700}
+  .steps .step.done .dot{background:var(--brand-mint);border-color:var(--brand-primary);color:var(--brand-primary)}
+
+  /* ============ Success ============ */
+  .success-box{text-align:center;padding:50px 20px;max-width:560px;margin:0 auto}
+  .success-box .check{
+    width:92px;height:92px;border-radius:50%;
+    background:linear-gradient(135deg,var(--brand-primary),var(--brand-hover));
+    color:#fff;font-size:2.6rem;display:flex;align-items:center;justify-content:center;
+    margin:0 auto 24px;box-shadow:0 16px 36px rgba(5,150,105,.35);
+    animation:successPop .6s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes successPop{0%{transform:scale(0) rotate(-45deg)}100%{transform:scale(1) rotate(0)}}
+  .success-box h2{font-size:1.85rem;margin-bottom:8px;color:var(--brand-dark)}
+  .ref-chip{
+    display:inline-block;font-family:'Outfit';font-weight:800;color:var(--brand-primary);
+    background:var(--brand-mint);border:1.5px dashed var(--brand-primary);
+    padding:10px 24px;border-radius:14px;font-size:1.25rem;margin:16px 0 20px;letter-spacing:.05em;
+  }
+  .success-box .detail{color:var(--ink-light);font-size:.98rem;line-height:1.7}
+  .success-actions{display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap}
+
+  /* ============ Bookings ============ */
+  .booking{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);padding:24px;margin-bottom:16px;transition:all .2s;
+  }
+  .booking:hover{box-shadow:var(--shadow-md)}
+  .b-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .b-ref{font-family:'Outfit';font-weight:800;font-size:.98rem}
+  .b-ref code{background:var(--brand-mint);color:var(--brand-primary);padding:4px 12px;border-radius:8px;font-size:.88rem;border:1px solid #d1fae5}
+  .status{padding:6px 14px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.08em;border:none}
+  .status.confirmed{background:var(--brand-mint);color:var(--brand-primary);border:1px solid #a7f3d0}
+  .b-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 20px}
+  .b-item span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .b-item b{font-size:.92rem;font-weight:600;color:var(--ink)}
+  .b-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);flex-wrap:wrap;gap:12px}
+  .b-total{font-family:'Outfit';font-weight:800;font-size:1.15rem;color:var(--brand-dark)}
+  .cancel-btn{
+    background:none;border:1.5px solid var(--line);color:var(--danger);
+    border-radius:10px;padding:8px 18px;font-size:.82rem;font-weight:700;cursor:pointer;transition:.2s;
+  }
+  .cancel-btn:hover{border-color:var(--danger);background:var(--danger-soft)}
+
+  /* ============ Footer ============ */
+  footer{background:var(--brand-darker);color:#94a3b8;margin-top:40px}
+  .foot-inner{
+    max-width:1200px;margin:0 auto;padding:54px clamp(16px,4vw,32px) 28px;
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;
+  }
+  .foot-brand .brand-name{color:#fff}
+  .foot-brand .brand-name small{color:var(--brand-accent)}
+  .foot-brand p{font-size:.88rem;line-height:1.7;margin-top:14px;max-width:360px}
+  footer h4{color:#fff;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}
+  .foot-col div{font-size:.88rem;margin-bottom:10px;line-height:1.6}
+  .foot-col div a{color:inherit;transition:.2s}
+  .foot-col div a:hover{color:#fff;text-decoration:none}
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,.08);padding:20px clamp(16px,4vw,32px);text-align:center;
+    font-size:.8rem;color:#64748b;
+  }
+  .foot-bottom b{color:#cbd5e1}
+
+  /* ============ Toast ============ */
+  #toast{
+    position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(90px);
+    background:var(--brand-darker);color:#fff;padding:14px 26px;border-radius:999px;
+    font-weight:600;font-size:.9rem;transition:all .35s cubic-bezier(.34,1.56,.64,1);
+    z-index:100;box-shadow:var(--shadow-lg);opacity:0;max-width:90vw;text-align:center;
+    border:1px solid rgba(255,255,255,.1);
+  }
+  #toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+  /* ============ Mobile Floating Cart Bar ============ */
+  .mobile-cart-bar{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:65;
+    background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+    box-shadow:0 -6px 20px rgba(0,0,0,.08);align-items:center;justify-content:space-between;gap:12px;
+    animation:slideUpBar .3s ease;
+  }
+  @keyframes slideUpBar{from{transform:translateY(100%)}to{transform:none}}
+  .m-bar-info b{display:block;font-size:.95rem;color:var(--brand-dark)}
+  .m-bar-info span{font-size:.8rem;color:var(--muted)}
+  .m-bar-btn{
+    background:var(--brand-primary);color:#fff;border:none;border-radius:12px;
+    padding:10px 18px;font-weight:700;font-size:.88rem;cursor:pointer;
+  }
+
+  /* ============ Responsive Breakpoints ============ */
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;padding-top:36px}
+    .booking-layout{grid-template-columns:1fr}
+    .side{position:static}
+    .how-grid{grid-template-columns:1fr;gap:20px}
+  }
+
+  @media(max-width:760px){
+    .foot-inner{grid-template-columns:1fr;gap:30px}
+    .mobile-cart-bar.active{display:flex}
+  }
+
+  @media(max-width:640px){
+    .header-inner{height:auto;padding:12px 16px;flex-direction:column;align-items:stretch;gap:10px}
+    .logo{align-self:flex-start}
+    nav{
+      display:flex;width:100%;overflow-x:auto;padding-bottom:4px;gap:6px;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    }
+    nav::-webkit-scrollbar{display:none}
+    .nav-link{padding:8px 14px;font-size:.84rem;flex:none}
+    .row2{grid-template-columns:1fr}
+    .hero-stats{gap:20px}
+    .hero-card{padding:20px}
+    .steps .step span.step-label{display:none}
+    .page{padding-top:28px;padding-bottom:100px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo" onclick="go('home')" title="Go to home">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.5 4.5 5.2v5.6c0 4.6 3.1 8.2 7.5 10.7 4.4-2.5 7.5-6.1 7.5-10.7V5.2L12 2.5Z" fill="#fff" fill-opacity=".95"/>
+          <path d="m8.4 12 2.5 2.7 4.7-5.2" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand-name">AS GLOBAL MANAGEMENT<small>Pest Control Services</small></div>
+    </div>
+    <nav>
+      <button id="nav-home" class="nav-link" onclick="go('home')">Home</button>
+      <button id="nav-services" class="nav-link" onclick="go('services')">Services</button>
+      <button id="nav-bookings" class="nav-link" onclick="go('bookings')">My Bookings</button>
+      <button id="nav-book" class="nav-link is-cta" onclick="go('book')">Book Now<span class="cart-badge" id="cart-badge">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HOME ================= -->
+<section class="view" id="view-home">
+  <div class="hero">
+    <div class="hero-text">
+      <span class="eyebrow">✓ Government-Certified &amp; Licensed</span>
+      <h1>A pest-free home, <em>booked in minutes.</em></h1>
+      <p>Professional pest control from AS Global Management — certified technicians, odourless eco-safe chemicals, and a 30-day service warranty. Zero advance payment; pay only after your inspection.</p>
+      <div class="hero-cta">
+        <button class="btn" onclick="go('services')">Book a Service →</button>
+        <button class="btn ghost" onclick="go('bookings')">View My Bookings</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>12,000+</b><span>Homes Protected</span></div>
+        <div class="stat"><b>4.9 ★</b><span>Customer Rating</span></div>
+        <div class="stat"><b>30-Day</b><span>Free Re-service</span></div>
+        <div class="stat"><b>100%</b><span>Pay After Service</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1581578731567-c884e2816aaa?w=1000&q=80&fm=jpg" alt="Pest treatment by technician" loading="eager">
+        <span class="img-cap">🧑‍🔧 On-site treatment by a certified technician</span>
+      </div>
+      <div class="hero-card">
+        <h3>Why customers choose us</h3>
+        <div class="benefit">
+          <div class="b-icon">🎓</div>
+          <div><b>Certified technicians</b><span>Background-verified, uniformed &amp; trained specialists</span></div>
+        </div>
+        <div class="benefit">
+          <div class="b-icon">🌿</div>
+          <div><b>Eco-safe chemicals</b><span>Odourless, kid-safe &amp; pet-friendly treatments</span></div>
+        </div>
+        <div class="benefit">
+          <div class="b-icon">🔁</div>
+          <div><b>Written 30-day warranty</b><span>Pests return within a month? We re-service for free</span></div>
+        </div>
+        <div class="mini-review">
+          <b>"Booked at 10 AM, treatment done by 2 PM. Punctual, neat, and highly effective."</b><br>— Meera K., 3 BHK customer
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="how">
+    <div class="how-grid">
+      <div class="how-title">How booking works</div>
+      <div class="how-step"><div class="num">1</div><div><b>Select treatments</b><span>Choose services tailored to your pest problems.</span></div></div>
+      <div class="how-step"><div class="num">2</div><div><b>Schedule visit</b><span>Pick a convenient date and slot with quick confirmation.</span></div></div>
+      <div class="how-step"><div class="num">3</div><div><b>Pay after service</b><span>Inspection, treatment &amp; warranty card — pay when satisfied.</span></div></div>
+    </div>
+  </div>
+
+  <div class="wrap page" style="padding-top:56px">
+    <div class="sec-head">
+      <span class="eyebrow">Gallery</span>
+      <h2>Our work in action</h2>
+      <p>A glimpse of the reliable treatments we deliver every day.</p>
+    </div>
+    <div class="gallery">
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1591735115730-4bf3a351cfe8?w=900&q=80&fm=jpg" alt="Wasp nest removal" loading="lazy">
+        <span class="img-cap">🐝 Precision nest removal</span>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1581578017093-cd30fce4eeb7?w=900&q=80&fm=jpg" alt="Garden and terrace treatment" loading="lazy">
+        <span class="img-cap">🌿 Safe outdoor &amp; garden barriers</span>
+      </div>
+      <div class="g-item">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80&fm=jpg" alt="Deep disinfection treatment" loading="lazy">
+        <span class="img-cap">🧴 Disinfection for homes &amp; offices</span>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:64px">
+      <span class="eyebrow">Most Booked</span>
+      <h2>Popular services</h2>
+      <p>Treatments customers trust the most this month.</p>
+    </div>
+    <div class="grid" id="home-grid"></div>
+    <div style="margin-top:32px;text-align:center">
+      <button class="btn ghost" onclick="go('services')">View all 8 services →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="view" id="view-services">
+  <div class="wrap page">
+    <div class="sec-head">
+      <span class="eyebrow">Full catalogue</span>
+      <h2>All pest control services</h2>
+      <p>Every treatment includes a thorough inspection, warranty card, and follow-up support.</p>
+    </div>
+    <div class="grid" id="services-grid"></div>
+    <div style="margin-top:36px;text-align:center">
+      <button class="btn" onclick="go('book')">Continue to booking →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK ================= -->
+<section class="view" id="view-book">
+  <div class="wrap page">
+    <div class="steps">
+      <div class="step done"><div class="dot">✓</div><span class="step-label">Choose services</span></div>
+      <div class="step active"><div class="dot">2</div><span class="step-label">Schedule visit</span></div>
+      <div class="step"><div class="dot">3</div><span class="step-label">Confirmation</span></div>
+    </div>
+    <div class="booking-layout">
+      <form class="panel" id="book-form" novalidate onsubmit="confirmBooking(event)">
+        <h3>📋 Your details</h3>
+        <div class="row2">
+          <div class="field" id="f-name">
+            <label>Full name</label>
+            <input type="text" id="in-name" placeholder="e.g. Priya Sharma" autocomplete="name">
+            <div class="err">Please enter your name (minimum 2 letters).</div>
+          </div>
+          <div class="field" id="f-phone">
+            <label>Phone number</label>
+            <input type="tel" id="in-phone" placeholder="95501 07466" maxlength="14" autocomplete="tel">
+            <div class="err">Enter a valid 10-digit Indian mobile number.</div>
+          </div>
+        </div>
+        <div class="field" id="f-type">
+          <label>Property type</label>
+          <select id="in-type">
+            <option value="">Select property type…</option>
+            <option>1 BHK / Studio</option>
+            <option>2 BHK</option>
+            <option>3 BHK</option>
+            <option>Villa / Independent house</option>
+            <option>Restaurant / Commercial kitchen</option>
+            <option>Office / Other commercial</option>
+          </select>
+          <div class="err">Please choose a property type.</div>
+        </div>
+        <div class="field" id="f-address">
+          <label>Service address</label>
+          <textarea id="in-address" rows="2" placeholder="Flat / house no, building, street, area, city, pincode"></textarea>
+          <div class="err">Please enter complete address (at least 10 characters).</div>
+        </div>
+        <div class="row2">
+          <div class="field" id="f-date">
+            <label>Preferred date</label>
+            <input type="date" id="in-date">
+            <div class="err">Pick a valid date (today or later).</div>
+          </div>
+          <div class="field" id="f-slot">
+            <label>Time slot</label>
+            <select id="in-slot">
+              <option value="">Select time slot…</option>
+              <option>08 AM – 11 AM</option>
+              <option>11 AM – 02 PM</option>
+              <option>02 PM – 05 PM</option>
+              <option>05 PM – 08 PM</option>
+            </select>
+            <div class="err">Choose a time slot.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Special instructions <span class="opt">(optional)</span></label>
+          <textarea id="in-notes" rows="2" placeholder="e.g. toddler at home, gate code, pets indoors…"></textarea>
+        </div>
+        <button type="submit" class="btn block" id="confirm-btn">Confirm booking — Pay after service ✔</button>
+        <div class="secure-note">🔒 Stored securely. No marketing spam.</div>
+      </form>
+
+      <aside class="panel side">
+        <h3>🧾 Booking summary</h3>
+        <div id="cart-items"></div>
+        <div class="sum-total-row" style="display:none" id="total-row"><span>Total payable</span><span class="amt" id="cart-total">₹0</span></div>
+        <div class="pay-note">
+          <span>💡</span>
+          <span><b>Zero advance payment</b>Pay cash or UPI to the technician after inspection. Free re-service included under 30-day warranty.</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUCCESS ================= -->
+<section class="view" id="view-success">
+  <div class="wrap page">
+    <div class="success-box">
+      <div class="check">✓</div>
+      <h2>Booking Confirmed!</h2>
+      <div class="ref-chip" id="ref-no">ASM-000000</div>
+      <p style="color:var(--muted);font-size:.84rem">Save this reference number for support</p>
+      <p class="detail" id="success-detail" style="margin-top:14px"></p>
+      <div class="success-actions">
+        <button class="btn" onclick="go('bookings')">📋 View my bookings</button>
+        <button class="btn ghost" onclick="go('services')">Book another service</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MY BOOKINGS ================= -->
+<section class="view" id="view-bookings">
+  <div class="wrap page">
+    <div class="sec-head">
+      <span class="eyebrow">Your account</span>
+      <h2>My bookings</h2>
+      <p>Stored locally on this device.</p>
+    </div>
+    <div id="bookings-list"></div>
+  </div>
+</section>
+
+<!-- ================= MOBILE FLOATING BAR ================= -->
+<div id="mobile-cart-bar" class="mobile-cart-bar">
+  <div class="m-bar-info">
+    <b id="m-bar-total">₹0</b>
+    <span id="m-bar-count">0 items selected</span>
+  </div>
+  <button class="m-bar-btn" onclick="go('book')">Review &amp; Book →</button>
+</div>
+
+<div id="toast"></div>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="logo" style="cursor:default" onclick="go('home')">
+        <div class="logo-mark" style="width:38px;height:38px;border-radius:10px">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:22px">
+            <path d="M12 2.5 4.5 5.2v5.6c0 4.6 3.1 8.2 7.5 10.7 4.4-2.5 7.5-6.1 7.5-10.7V5.2L12 2.5Z" fill="#fff" fill-opacity=".95"/>
+            <path d="m8.4 12 2.5 2.7 4.7-5.2" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-name">AS GLOBAL MANAGEMENT<small>Pest Control Services</small></div>
+      </div>
+      <p>Certified pest management for homes and businesses. Trained operators, eco-friendly approved chemicals, and 30-day warranty coverage.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <div>Cockroach Control</div>
+      <div>Termite Treatment</div>
+      <div>Bed Bugs Removal</div>
+      <div>Rodent &amp; Mosquito Control</div>
+      <div>Deep Disinfection</div>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <div>📞 <a href="tel:+919550107466">+91 95501 07466</a></div>
+      <div>✉️ <a href="mailto:support@asglobalmanagement.com">support@asglobalmanagement.com</a></div>
+      <div>🔁 30-day free re-service</div>
+      <div>💳 Pay after service</div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    © 2026 <b>AS GLOBAL MANAGEMENT</b> · All rights reserved · Demo app
+  </div>
+</footer>
+
+<script>
+/* ============ Data ============ */
+const SERVICES = [
+  {id:"cockroach", icon:"🪳", name:"Cockroach Control",      desc:"Gel-based, odourless kitchen-safe treatment for homes, cafés and restaurants.", price:799,  rating:4.8, chips:["Gel treatment","Odourless","Same-day"]},
+  {id:"termite",   icon:"🐜", name:"Termite Treatment",      desc:"Drill-and-inject chemical barrier for walls, floors & woodwork.",              price:2499, rating:4.9, chips:["5-yr option","Soil barrier","Warranty card"]},
+  {id:"bedbugs",   icon:"🛏️", name:"Bed Bugs Removal",       desc:"2-visit spray + steam protocol for mattresses, beds and sofas.",               price:1599, rating:4.7, chips:["2 visits","Steam chamber","Mattress-safe"]},
+  {id:"rodent",    icon:"🐀", name:"Rodent Control",         desc:"Bait stations, glue traps and entry-point sealing for rats & mice.",           price:1199, rating:4.8, chips:["Rodent-proofing","Safe baits","Follow-up"]},
+  {id:"mosquito",  icon:"🦟", name:"Mosquito Treatment",     desc:"Thermal fogging + larvicide for balconies, gardens and terraces.",             price:999,  rating:4.7, chips:["Fogging","Larvicide","Society plans"]},
+  {id:"ants",      icon:"🕸️", name:"Ants & General Pests",   desc:"Barrier spray for ants, spiders, silverfish and crawling pests.",              price:899,  rating:4.6, chips:["Perimeter spray","Residual action","Kid-safe"]},
+  {id:"woodborer", icon:"🪵", name:"Wood Borer Treatment",   desc:"Oil-based injection for furniture, doors and wooden fittings.",                price:1399, rating:4.7, chips:["Furniture-safe","Deep injection","Stain-free"]},
+  {id:"sanitize",  icon:"🧴", name:"Deep Disinfection",      desc:"Full-home sanitization killing bacteria & viruses with safe chemicals.", price:1299, rating:4.9, chips:["Hospital-grade","Eco chemicals","Certificate"]},
+];
+
+/* ============ State ============ */
+const CART_KEY = "asgm_cart", BOOKINGS_KEY = "asgm_bookings";
+const OWNER_EMAIL = "support@asglobalmanagement.com";
+let currentView = "home";
+let cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+const $ = id => document.getElementById(id);
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+
+function saveCart(){ 
+  localStorage.setItem(CART_KEY, JSON.stringify(cart)); 
+  renderCart(); 
+  renderCards(); 
+  updateMobileBar();
+}
+function saveBookings(b){ localStorage.setItem(BOOKINGS_KEY, JSON.stringify(b)); }
+
+/* ============ Navigation ============ */
+function go(view){
+  currentView = view;
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("show"));
+  $("view-" + view).classList.add("show");
+  document.querySelectorAll(".nav-link").forEach(b => b.classList.remove("active"));
+  $("nav-" + view)?.classList.add("active");
+  if(view === "bookings") renderBookings();
+  if(view === "book") renderCart();
+  updateMobileBar();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ============ Cards ============ */
+function cardHTML(s){
+  const inCart = cart.includes(s.id);
+  const chips = (s.chips || []).map(c => `<span class="chip">${c}</span>`).join("");
+  return `<div class="card ${inCart ? "selected" : ""}">
+    <div class="card-top">
+      <div class="icon">${s.icon}</div>
+      <span class="rating"><span class="star">★</span>${s.rating}</span>
+    </div>
+    <h3>${s.name}</h3>
+    <p>${s.desc}</p>
+    <div class="chips">${chips}</div>
+    <div class="price-row">
+      <span class="price">${fmt(s.price)} <small>onwards</small></span>
+      <button class="add-btn ${inCart ? "added" : ""}" onclick="toggleCart('${s.id}', this)">
+        ${inCart ? "✓ Added" : "+ Add"}
+      </button>
+    </div>
+  </div>`;
+}
+
+function renderCards(){
+  $("home-grid").innerHTML = SERVICES.slice(0,4).map(cardHTML).join("");
+  $("services-grid").innerHTML = SERVICES.map(cardHTML).join("");
+}
+
+function toggleCart(id, btn){
+  if(cart.includes(id)){
+    cart = cart.filter(x => x !== id);
+    toast("Removed from booking");
+  } else {
+    cart.push(id);
+    toast("✓ Added to booking");
+  }
+  const badge = $("cart-badge");
+  badge.classList.remove("bump");
+  void badge.offsetWidth; // trigger reflow
+  badge.classList.add("bump");
+  saveCart();
+}
+
+/* ============ Cart summary & Mobile Bar ============ */
+function updateMobileBar(){
+  const bar = $("mobile-cart-bar");
+  if(!bar) return;
+  if(cart.length > 0 && currentView !== "book" && currentView !== "success"){
+    const total = cart.reduce((sum,id) => sum + SERVICES.find(s => s.id === id).price, 0);
+    $("m-bar-total").textContent = fmt(total);
+    $("m-bar-count").textContent = `${cart.length} service${cart.length > 1 ? "s" : ""} selected`;
+    bar.classList.add("active");
+  } else {
+    bar.classList.remove("active");
+  }
+}
+
+function renderCart(){
+  $("cart-badge").textContent = cart.length;
+  const box = $("cart-items");
+  if(!box) return;
+  if(cart.length === 0){
+    box.innerHTML = `<div class="empty-cart">No services selected yet.<br><a href="#" onclick="go('services');return false">Browse our services →</a></div>`;
+    $("total-row").style.display = "none";
+  } else {
+    box.innerHTML = cart.map(id => {
+      const s = SERVICES.find(x => x.id === id);
+      return `<div class="sum-item">
+        <span class="s-icon">${s.icon}</span>
+        <span class="s-main"><b>${s.name}</b><span>Includes inspection &amp; warranty</span></span>
+        <span class="s-price">${fmt(s.price)}<button class="s-x" title="Remove" onclick="toggleCart('${id}')">✕</button></span>
+      </div>`;
+    }).join("");
+    $("total-row").style.display = "flex";
+  }
+  const total = cart.reduce((sum,id) => sum + SERVICES.find(s => s.id === id).price, 0);
+  $("cart-total").textContent = fmt(total);
+}
+
+/* ============ Form & Validation ============ */
+$("in-date").min = new Date().toISOString().split("T")[0];
+
+function validate(){
+  const checks = [
+    ["f-name",   $("in-name").value.trim().length >= 2],
+    ["f-phone",  /^[6-9]\d{9}$|^(\+91[\s-]?)?[1-9]\d{9}$/.test($("in-phone").value.replace(/\s/g,""))],
+    ["f-type",   $("in-type").value !== ""],
+    ["f-address",$("in-address").value.trim().length >= 10],
+    ["f-date",   $("in-date").value !== "" && $("in-date").value >= $("in-date").min],
+    ["f-slot",   $("in-slot").value !== ""],
+  ];
+  let ok = true;
+  checks.forEach(([id, valid]) => {
+    $(id).classList.toggle("invalid", !valid);
+    if(!valid){
+      ok = false;
+      $(id).scrollIntoView({behavior:"smooth", block:"center"});
+    }
+  });
+  if(!ok) toast("⚠ Please fix the highlighted fields");
+  return ok;
+}
+
+/* ============ Notification ============ */
+async function sendBookingEmail(b){
+  try{
+    const res = await fetch(`https://formsubmit.co/ajax/${OWNER_EMAIL}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        _subject:    `New booking ${b.ref} | AS GLOBAL MANAGEMENT`,
+        _template:   "table",
+        _captcha:    "false",
+        "Booking ref":           b.ref,
+        "Customer name":         b.name,
+        "Phone":                 b.phone,
+        "Property type":         b.type,
+        "Service address":       b.address,
+        "Preferred date":        new Date(b.date).toDateString(),
+        "Time slot":             b.slot,
+        "Services booked":       b.services,
+        "Total (pay after service)": fmt(b.total),
+        "Special notes":         b.notes || "—",
+        "Booked on":             b.placed,
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.success !== "false") return { ok: true };
+    if (res.ok && /activat/i.test(data.message || "")) return { pending: true };
+    return null;
+  } catch(err){ return null; }
+}
+
+function confirmBooking(e){
+  e.preventDefault();
+  if(cart.length === 0){ toast("⚠ Add at least one service first"); go("services"); return; }
+  if(!validate()) return;
+
+  const total = cart.reduce((sum,id) => sum + SERVICES.find(s => s.id === id).price, 0);
+  const names = cart.map(id => SERVICES.find(s => s.id === id).name).join(", ");
+  const ref = "ASM-" + Math.floor(100000 + Math.random() * 900000);
+
+  const bookings = JSON.parse(localStorage.getItem(BOOKINGS_KEY) || "[]");
+  bookings.unshift({
+    ref, name:$("in-name").value.trim(), phone:$("in-phone").value.trim(),
+    type:$("in-type").value, address:$("in-address").value.trim(),
+    date:$("in-date").value, slot:$("in-slot").value,
+    notes:$("in-notes").value.trim(), services:names, total,
+    status:"confirmed", placed:new Date().toLocaleDateString("en-IN"),
+  });
+  saveBookings(bookings);
+
+  $("ref-no").textContent = ref;
+  $("success-detail").innerHTML =
+    `${names} scheduled for <b>${new Date($("in-date").value).toDateString()}</b>, ${$("in-slot").value}.<br>Total payable after service: <b>${fmt(total)}</b>. Confirmation call will be placed to <b>${$("in-phone").value}</b>.`;
+
+  cart = []; saveCart();
+  $("book-form").reset();
+  go("success");
+
+  sendBookingEmail(bookings[0]).then(result => {
+    if(result && result.pending){
+      toast("📩 Setup: Check inbox of support@asglobalmanagement.com to activate FormSubmit");
+    } else if(result){
+      toast(`📩 Booking ${bookings[0].ref} emailed to AS GLOBAL MANAGEMENT`);
+    } else {
+      toast("⚠ Booking stored in My Bookings");
+    }
+  });
+}
+
+/* ============ My Bookings View ============ */
+function renderBookings(){
+  const bookings = JSON.parse(localStorage.getItem(BOOKINGS_KEY) || "[]");
+  const list = $("bookings-list");
+  if(bookings.length === 0){
+    list.innerHTML = `<div class="empty-cart" style="padding:40px 10px">📭 No bookings yet.<br><a href="#" onclick="go('services');return false">Book your first service →</a></div>`;
+    return;
+  }
+  const icons = ["🐞","🐜","🛏️","🐀","🦟","🕸️","🪵","🧴"];
+  list.innerHTML = bookings.map((b, i) => `
+    <div class="booking">
+      <div class="b-head">
+        <div class="b-ref">${icons[i % icons.length]} <code>${b.ref}</code></div>
+        <button class="status confirmed">● CONFIRMED</button>
+      </div>
+      <div class="b-details">
+        <div class="b-item"><span>Services</span><b>${b.services}</b></div>
+        <div class="b-item"><span>Date &amp; time</span><b>${new Date(b.date).toDateString()} · ${b.slot}</b></div>
+        <div class="b-item"><span>Customer</span><b>${b.name} · ${b.phone}</b></div>
+        <div class="b-item"><span>Address</span><b>${b.type} — ${b.address}</b></div>
+      </div>
+      <div class="b-foot">
+        <span class="b-total">Pay after service: ${fmt(b.total)}</span>
+        <button class="cancel-btn" onclick="cancelBooking('${b.ref}', this)">✕ Cancel booking</button>
+      </div>
+    </div>`).join("");
+}
+
+function cancelBooking(ref, btn){
+  btn.textContent = "Confirm cancel?";
+  btn.onclick = () => {
+    const bookings = JSON.parse(localStorage.getItem(BOOKINGS_KEY) || "[]")
+                     .filter(b => b.ref !== ref);
+    saveBookings(bookings);
+    renderBookings();
+    toast("Booking " + ref + " cancelled");
+  };
+}
+
+/* ============ Toast ============ */
+let toastTimer;
+function toast(msg){
+  const t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2400);
+}
+
+/* ============ Init ============ */
+renderCards(); renderCart(); go("home");
+</script>
+</body>
+</html>
